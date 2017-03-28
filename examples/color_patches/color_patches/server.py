@@ -9,14 +9,14 @@ from mesa.visualization.ModularVisualization import ModularServer
 
 from .model import ColorPatchModel
 
-_COLORS = ['Aqua', 'Blue', 'Fuchsia', 'Gray', 'Green',
-           'Lime', 'Maroon', 'Navy', 'Olive', 'Orange', 'Purple',
-           'Red', 'Silver', 'Teal', 'White', 'Yellow']
+_COLORS = ['#92a8d1', '#034f84', '#f7cac9', '#f7786b', '#deeaee',
+           '#b1cbbb', '#eea29a', '#98FB98', '#d5f4e6', '#80ced6', '#fefbd8',
+           '#ffef96', '#DDA0DD', '#b2b2b2', '#f4e1d2', '#9370DB']
 
 
 GRID_ROWS = 100
 GRID_COLS = 100
-CELL_SIZE = 5
+CELL_SIZE = 7
 CANVAS_WIDTH = GRID_ROWS * CELL_SIZE
 CANVAS_HEIGHT = GRID_COLS * CELL_SIZE
 
