@@ -1,4 +1,5 @@
 import random
+import math
 
 from mesa import Agent, Model
 from mesa.time import RandomActivation
@@ -48,7 +49,7 @@ class MoneyAgent(Agent):
     """ An agent with fixed initial wealth."""
     def __init__(self, unique_id, model):
         super().__init__(unique_id, model)
-        self.wealth = 1
+        self.wealth = 5
 
     def move(self):
         possible_steps = self.model.grid.get_neighborhood(
@@ -61,10 +62,10 @@ class MoneyAgent(Agent):
         cellmates = self.model.grid.get_cell_list_contents([self.pos])
         if len(cellmates) > 1:
             other = random.choice(cellmates)
-            other.wealth += 1
-            self.wealth -= 1
+            other.wealth += math.ceil(0.3*self.wealth)
+            self.wealth -= math.ceil(0.3*self.wealth)
 
     def step(self):
-        self.move()
+        #self.move()
         if self.wealth > 0:
             self.give_money()
