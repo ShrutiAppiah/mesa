@@ -56,7 +56,10 @@ class ColorCell(Agent):
             if neighbor[1] == polled_opinions[0][1]:
                 tied_opinions.append(neighbor)
 
+        # print("my state", self._state)
+        # print("TIED OPINIONS", tied_opinions)
         self._next_state = random.choice(tied_opinions)[0]
+        # print("next state", self._next_state)
 
     def advance(self):
         '''
@@ -108,25 +111,8 @@ class ColorPatchModel(Model):
 
     @property
     def grid(self):
-        """
-        /mesa/visualization/modules/CanvasGridVisualization.py
-        is directly accessing Model.grid
-             76     def render(self, model):
-             77         grid_state = defaultdict(list)
-        ---> 78         for y in range(model.grid.height):
-             79             for x in range(model.grid.width):
-             80                 cell_objects = model.grid.get_cell_list_contents([(x, y)])
-
-        AttributeError: 'ColorPatchModel' object has no attribute 'grid'
-        """
         return self._grid
 
     @property
     def schedule(self):
-        """
-        mesa_ABM/examples_ABM/color_patches/mesa/visualization/ModularVisualization.py",
-        line 278, in run_model
-            while self.model.schedule.steps < self.max_steps and self.model.running:
-        AttributeError: 'NoneType' object has no attribute 'steps'
-        """
         return self._schedule

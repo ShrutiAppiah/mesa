@@ -14,9 +14,9 @@ _COLORS = ['#92a8d1', '#034f84', '#f7cac9', '#f7786b', '#deeaee',
            '#ffef96', '#DDA0DD', '#b2b2b2', '#f4e1d2', '#9370DB']
 
 
-GRID_ROWS = 100
-GRID_COLS = 100
-CELL_SIZE = 7
+GRID_ROWS = 25
+GRID_COLS = 25
+CELL_SIZE = 25
 CANVAS_WIDTH = GRID_ROWS * CELL_SIZE
 CANVAS_HEIGHT = GRID_COLS * CELL_SIZE
 
